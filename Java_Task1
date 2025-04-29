@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class Task1 {
+    public static void main(String[] args) {
+
+        // Task 1: Compare sum of a + b with c + d
+        int a = 5, b = 10, c = 7, d = 3;
+        if ((a + b) > (c + d)) {
+            System.out.println("Sum of a and b is greater than sum of c and d");
+        }
+
+        // Task 2: Check if number is even
+        int num = 8;
+        if (num % 2 == 0) {
+            System.out.println(num + " is an even number");
+        }
+
+        // Task 3: Print characters from A to Z
+        System.out.println("Alphabets from A to Z:");
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            System.out.print(ch + " ");
+        }
+        System.out.println();
+
+        // Task 4: Swap two numbers using a third variable
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number to swap: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter second number to swap: ");
+        int num2 = sc.nextInt();
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+        System.out.println("After swapping: First number = " + num1 + ", Second number = " + num2);
+
+        // Task 5: Check if a number is prime
+        System.out.print("Enter a number to check if it's prime: ");
+        int primeCheck = sc.nextInt();
+        boolean isPrime = true;
+        if (primeCheck <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= primeCheck / 2; i++) {
+                if (primeCheck % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        System.out.println(primeCheck + (isPrime ? " is a prime number" : " is not a prime number"));
+
+        // Task 6: Print factorial of a number
+        System.out.print("Enter a number to find its factorial: ");
+        int factNum = sc.nextInt();
+        long factorial = 1;
+        for (int i = 1; i <= factNum; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + factNum + " is: " + factorial);
+
+        // Task 7: Print length of a given string
+        String msg = "Guvi Geek";
+        System.out.println("Length of the string \"" + msg + "\" is: " + msg.length());
+
+        // Task 8: Print message 10 times
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Welcome to Guvi");
+        }
+
+        // Task 9: Check for senior citizen (age >= 60)
+        System.out.print("Enter age to check if senior citizen: ");
+        int age = sc.nextInt();
+        if (age >= 60) {
+            System.out.println("The person is a senior citizen.");
+        } else {
+            System.out.println("The person is not a senior citizen.");
+        }
+
+        // Task 10: Count number of digits in an integer
+        System.out.print("Enter a number to count digits: ");
+        int digitNum = sc.nextInt();
+        int digitCount = 0;
+        int tempNum = Math.abs(digitNum);
+        do {
+            digitCount++;
+            tempNum /= 10;
+        } while (tempNum != 0);
+        System.out.println("Number of digits in " + digitNum + " is: " + digitCount);
+    }
+}
